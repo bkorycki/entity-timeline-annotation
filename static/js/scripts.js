@@ -1,3 +1,4 @@
+"use strict";
 function disable(root_element, opaque=true){
   $(root_element).addClass("disable");
   if (opaque == true){
@@ -187,7 +188,7 @@ $(document).ready(function(){
     });
     // initially active + disable button 
     $(intake_task).children().addClass("active");
-    disable(intake_collapse_btn, opaque=false);
+    disable(intake_collapse_btn, false);
     console.log($(this).find('input[name="intake_'+i+'"]'));
     // intake input
     $(this).find('input[name="intake_'+i+'"]').change(function(){
@@ -199,7 +200,7 @@ $(document).ready(function(){
       if(new_val== "yes"){
         $(intake_task).addClass("collapsible");
         collapse(intake_task);
-        enable(intake_collapse_btn, opaque=false);
+        enable(intake_collapse_btn, false);
         $(slide).find('.dates_task, .durations_task').removeClass("hidden");
         setTimeout(function(){
             $(slide).find('.dates_task, .durations_task').children().addClass("active");
@@ -210,7 +211,7 @@ $(document).ready(function(){
 
       } else{
         $(intake_task).removeClass("collapsible");
-        disable(intake_collapse_btn, opaque=false);
+        disable(intake_collapse_btn, false);
         $(slide).find('.dates_task, .durations_task').addClass("hidden");
         $(slide).find('.dates_task, .durations_task').removeClass("active");
         DatesObj.clear();
