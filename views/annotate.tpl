@@ -21,7 +21,7 @@
         </article>
     </crowd-card >
 
-    <section class="task-section">
+    <div class="task-section">
         % for med_ix, med in enumerate(meds):
         <div class="med_slide hidden">
             % include partials/intake_task.tpl med=med, med_ix=med_ix
@@ -29,7 +29,7 @@
             % include partials/durations_task.tpl med=med, med_ix=med_ix, durations=durations
         </div>
         % end
-    </section>
+    </div>
 
     <div class="button-container">
         <button type="button" class="next disable opaque" title="Continue">&#8594;</button>
@@ -39,7 +39,6 @@
     % include partials/feedback_section.tpl
     % include partials/instructions.tpl
 
-   <!-- {# <button type="submit" style="display: none">Submit</button> #} -->
     <crowd-button form-action="submit" style="display: none"></crowd-button>
 </crowd-form>
 

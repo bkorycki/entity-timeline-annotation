@@ -1,10 +1,8 @@
 ﻿import os
-
-from bottle import route, template, redirect, static_file, error, run, request, HTTPResponse
-from services import med_annotator
-
-import logging
 import json
+from bottle import route, template, redirect, static_file, error, run, request, HTTPResponse
+
+from services import med_annotator
 
 
 def load_sample(sample_name):
