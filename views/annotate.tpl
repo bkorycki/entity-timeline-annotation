@@ -9,7 +9,7 @@
 <body>
 
 <crowd-form>
-    <h1 id="page-title">{{ doc_id }}: </h1>
+    <div id="page-title"><div id="title-docid">{{ doc_id }}:</div><div id="title-med">Med</div></div>
     <div id="progressbar"></div>
 
     <crowd-card class="text-post-section">

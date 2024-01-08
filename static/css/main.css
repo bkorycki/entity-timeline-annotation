@@ -10,9 +10,23 @@
   }
 
   #page-title{
-    text-align: center;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    font-size: 32px;
+    font-weight: bold;
   }
 
+  #title-docid {
+    float: left;
+    padding-right: 20px;
+    width: 50%;
+    text-align: right;
+  }
+
+  #title-med {
+    text-align: left;
+  }
 
   .ex_img{ 
     width: 45%;

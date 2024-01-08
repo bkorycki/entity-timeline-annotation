@@ -28,6 +28,7 @@ function update_buttons(){
   this.progress_bar.progressbar({
       value: ((this.slideIndex +1)*100.0)/(this.num_slides -1)
     });
+  this.progress_med.text("Med " + (this.slideIndex+1).toString() + "/" + (this.num_slides-1).toString());
   // update buttons
   if (this.slideIndex == 0){
     this.prev_button.addClass("hidden");
@@ -102,13 +103,14 @@ $(document).ready(function(){
   });
 
 // INITIALIZE
-  var UI = {
+  const UI = {
     slides: $('.med_slide'),
     num_slides: $('.med_slide').length,
     slideIndex: 0,
     prev_button: $(".prev"),
     next_button: $(".next"),
-    progress_bar: $("#progressbar")
+    progress_bar: $("#progressbar"),
+    progress_med: $("#title-med")
   }
   UI.changeSlide = changeSlide;
   UI.update_buttons = update_buttons;
@@ -138,9 +140,6 @@ $(document).ready(function(){
 
 //////////////////////////////////////////////////////////////////
   $(UI.slides).each(function(i) {
-    // if (i == UI.num_slides-2){
-    //   i = "TEST";
-    // }
     var intake_task = $(this).find(".intake_task");
     var durs_task = $(this).find(".durations_task");
 
@@ -629,5 +628,4 @@ $(document).ready(function(){
         }); 
       });  
   }); 
-
 }); 
