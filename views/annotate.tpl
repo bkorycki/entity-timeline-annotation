@@ -29,6 +29,7 @@
             % include partials/durations_task.tpl med=med, med_ix=med_ix, durations=durations
         </div>
         % end
+        % include partials/feedback_section.tpl
     </div>
 
     <div class="button-container">
@@ -36,7 +37,7 @@
         <button type="button" class="prev" title="Back">&#8592;</button>
     </div>
 
-    % include partials/feedback_section.tpl
+    
     % include partials/instructions.tpl
 
     <crowd-button form-action="submit" style="display: none"></crowd-button>
