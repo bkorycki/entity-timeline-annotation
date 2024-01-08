@@ -36,10 +36,8 @@
         <button type="button" class="next disable opaque" title="Continue">&#8594;</button>
         <button type="button" class="prev" title="Back">&#8592;</button>
     </div>
-
     
     % include partials/instructions.tpl
-
     <crowd-button form-action="submit" style="display: none"></crowd-button>
 </crowd-form>
 

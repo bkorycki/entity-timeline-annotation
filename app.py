@@ -2,12 +2,12 @@
 import json
 from bottle import route, template, redirect, static_file, error, run, request, HTTPResponse
 
-from services import med_annotator
+# from services import med_annotator
 
 
 def load_sample(sample_name):
     try:
-        with open(f'resources/{sample_name}.json', 'r', encoding='utf-8') as file:
+        with open(f'resources/demos/{sample_name}.json', 'r', encoding='utf-8') as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError) as error:
         raise HTTPResponse(status=404, body=str(error))
