@@ -82,17 +82,6 @@ function changeSlide() {
   this.update_buttons();
 };
 
-function xml_http_post(data) {
-  var req = new XMLHttpRequest();
-  req.open("POST", true);
-  req.onreadystatechange = function() {
-      if (req.readyState == 4) {
-      console.log(req.responseText);
-      }
-  }
-  req.send(data);
-}
-
 $(document).ready(function(){
   // DISABLE SUBMIT SHORTCUT
   document.addEventListener('keydown', function(event) {
@@ -134,10 +123,7 @@ $(document).ready(function(){
     UI.changeSlide();
   });
   UI.next_button.click(function(){
-    if (UI.slideIndex >= UI.num_slides - 1){
-      var data = $("crowd-form :input").serializeArray();
-      data = JSON.stringify(data)
-      xml_http_post(data)      
+    if (UI.slideIndex >= UI.num_slides - 1){  
       document.querySelector('crowd-form').submit();
     } else {
       UI.slideIndex += 1;
@@ -189,10 +175,8 @@ $(document).ready(function(){
     // initially active + disable button 
     $(intake_task).children().addClass("active");
     disable(intake_collapse_btn, false);
-    console.log($(this).find('input[name="intake_'+i+'"]'));
     // intake input
     $(this).find('input[name="intake_'+i+'"]').change(function(){
-      console.log("CHANGE");
       $(intake_task).addClass("complete");
       $(slide).addClass("v1");
       var new_val = $(slide).find('input[name="intake_'+i+'"]:checked').val();
