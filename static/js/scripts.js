@@ -28,7 +28,6 @@ function update_buttons(){
   this.progress_bar.progressbar({
       value: ((this.slideIndex +1)*100.0)/(this.num_slides -1)
     });
-  this.progress_med.text("Med " + (this.slideIndex+1).toString() + "/" + (this.num_slides-1).toString());
   // update buttons
   if (this.slideIndex == 0){
     this.prev_button.addClass("hidden");
@@ -36,9 +35,11 @@ function update_buttons(){
     this.prev_button.removeClass("hidden");
   }
   if (this.slideIndex == this.num_slides-1){
+    this.progress_med.text("Feedback");
     this.next_button.addClass("submit_button");
     this.next_button[0].innerHTML = "Submit";
   } else {
+    this.progress_med.text("Med " + (this.slideIndex+1).toString() + "/" + (this.num_slides-1).toString());
     this.next_button.removeClass("submit_button");
     this.next_button[0].innerHTML = "&#8594;";
   }
